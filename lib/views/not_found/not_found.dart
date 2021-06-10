@@ -6,7 +6,9 @@ class NotFoundView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return KScaffold(
-      body: Text('Nothing here... go please'),
+      content: [
+        Text('Nothing here... go please'),
+      ],
     );
   }
 }

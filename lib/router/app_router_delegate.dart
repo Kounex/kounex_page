@@ -32,8 +32,8 @@ class AppRouterDelegate extends RouterDelegate<RouteInformation>
   }
 
   void _updatePages(String? location) {
-    Page page =
-        _routes.putIfAbsent(location ?? '', () => AppLocation.notFound.page);
+    Page page = _routes.putIfAbsent(location ?? AppLocation.notFound.route,
+        () => AppLocation.notFound.page);
 
     _pages.removeWhere((historyPage) => historyPage.name == page.name);
     _pages = [..._pages, page];

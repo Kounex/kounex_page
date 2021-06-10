@@ -1,14 +1,28 @@
 import 'package:flutter/material.dart';
 
 class KScaffold extends StatelessWidget {
-  final Widget body;
+  final List<Widget> content;
+  final double? contentExtent;
 
-  KScaffold({required this.body});
+  final ScrollController? contentController;
+
+  KScaffold({
+    required this.content,
+    this.contentExtent,
+    this.contentController,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(child: this.body),
+      body: SafeArea(
+        child: ListView.builder(
+          controller: this.contentController,
+          itemCount: this.content.length,
+          itemExtent: this.contentExtent,
+          itemBuilder: (context, index) => this.content[index],
+        ),
+      ),
     );
   }
 }

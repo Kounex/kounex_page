@@ -8,18 +8,16 @@ class ImprintView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return KScaffold(
-      body: Column(
-        children: [
-          Text('Imprint'),
-          ElevatedButton(
-            onPressed: () => AppRouterDelegate.of(context)
-                .routeTo(ImprintLocation.detail.route),
-            child: Text(
-              'Detail',
-            ),
+      content: [
+        Text('Imprint'),
+        ElevatedButton(
+          onPressed: () => AppRouterDelegate.of(context)
+              .routeTo(ImprintLocation.detail.route),
+          child: Text(
+            'Detail',
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

@@ -6,7 +6,9 @@ class ImprintDetailView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return KScaffold(
-      body: Text('Detail'),
+      content: [
+        Text('Detail'),
+      ],
     );
   }
 }
